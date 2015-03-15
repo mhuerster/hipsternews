@@ -59,5 +59,5 @@ angular.module('hipsterNews', ['ui.router'])
   '$stateParams',
   '$posts',
   function($scope, $stateParams, $posts){
-
+    $scope.post = posts.posts[$stateParams.id];
   }]);
