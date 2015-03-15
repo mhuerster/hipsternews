@@ -20,7 +20,13 @@ angular.module('hipsterNews', ['ui.router'])
 .factory('posts', [function(){
   // change this variable name to something more semantic
   var o = {
-    posts: []
+    posts: [
+      {title: 'post1', upvotes: 5},
+      {title: 'post2', upvotes: 2},
+      {title: 'post3', upvotes: 15},
+      {title: 'post4', upvotes: 9},
+      {title: 'post5', upvotes: 4}
+    ]
   };
   return o;
 }])
@@ -30,18 +36,15 @@ angular.module('hipsterNews', ['ui.router'])
   function($scope, posts){
     $scope.test = 'Hello world!';
     $scope.posts = posts.posts;
-    // $scope.posts = [
-    // {title: 'post1', upvotes: 5},
-    // {title: 'post2', upvotes: 2},
-    // {title: 'post3', upvotes: 15},
-    // {title: 'post4', upvotes: 9},
-    // {title: 'post5', upvotes: 4}
-    // ];
     $scope.addPost = function() {
       if (!$scope.title || $scope.title == '') { return; }
       $scope.posts.push({
         title: $scope.title,
         link: $scope.link,
+        comments: [
+            {author: 'Joe', body: 'Sriracha YOLO flannel paleo, yr typewriter shabby chic four dollar toast blog PBR dreamcatcher cred master cleanse Thundercats crucifix.', upvotes: 0},
+            {author: 'Bob', body: 'Cardigan gastropub health goth, normcore gentrify you probably haven\'t heard of them DIY Portland typewriter squid twee keytar.', upvotes: 0}
+          ],
         upvotes: 0
       });
       $scope.title = '';
@@ -56,5 +59,5 @@ angular.module('hipsterNews', ['ui.router'])
   '$stateParams',
   '$posts',
   function($scope, $stateParams, $posts){
-    
+
   }]);
