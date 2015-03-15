@@ -13,34 +13,36 @@
   </style>
 </head>
 
-<body ng-app="hipsterNews" ng-controller="MainCtrl">
+<body ng-app="hipsterNews">
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
-      <div class="page-header">
-        <h1>Hipster News</h1>
-      </div>
-      <div ng-repeat="post in posts | orderBy: '-upvotes'">
-        <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(post)"></span> {{ post.upvotes }}
-        <span style="font-size:20px; margin-left:10px;">
-                  <a ng-show="post.link" href="{{post.link}}">
-                    {{ post.title }}
-                  </a>
-                  <span ng-hide="post.link">{{ post.title }}</span>
-        </span>
-        <!-- close style span -->
-      </div>
-      <form ng-submit="addPost()" style="margin-top:30px;">
-        <h3>Add a New Post</h3>
-        <div class="form-group"></div>
-        <input type="text" class="form-control" placeholder="Title" ng-model="title"></input>
-        <br>
-        <input type="text" class="form-control" placeholder="Link" ng-model="link"></input>
-        <br>
-        <button type="submit" class="btn btn-primary">Post</button>
-      </form>
+      <ui-view></ui-view>
     </div>
-    <!-- close col-md-6 col-md-offset-3  -->
   </div>
+  <script type="text/ng-template" id="/home.html">
+    <div class="page-header">
+      <h1>Hipster News</h1>
+    </div>
+    <div ng-repeat="post in posts | orderBy: '-upvotes'">
+      <span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(post)"></span> {{ post.upvotes }}
+      <span style="font-size:20px; margin-left:10px;">
+                <a ng-show="post.link" href="{{post.link}}">
+                  {{ post.title }}
+                </a>
+                <span ng-hide="post.link">{{ post.title }}</span>
+      </span>
+      <!-- close style span -->
+    </div>
+    <form ng-submit="addPost()" style="margin-top:30px;">
+      <h3>Add a New Post</h3>
+      <div class="form-group"></div>
+      <input type="text" class="form-control" placeholder="Title" ng-model="title"></input>
+      <br>
+      <input type="text" class="form-control" placeholder="Link" ng-model="link"></input>
+      <br>
+      <button type="submit" class="btn btn-primary">Post</button>
+    </form>
+  </script>
   <!-- close row -->
 </body>
 
