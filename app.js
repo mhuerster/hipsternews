@@ -1,4 +1,17 @@
 angular.module('hipsterNews', ['ui.router'])
+.config([
+  '$stateProvider',
+  '$urlRouterProvider',
+  function($stateProvider, $urlRouterProvider) {
+    $stateProvider
+      .state('home', {
+        url: '/home',
+        templateUrl: '/home.html',
+        controller: 'MainCtrl'
+      });
+    $urlRouterProvider.otherwise('home');
+  }
+  ])
 .factory('posts', [function(){
   // change this variable name to something more semantic
   var o = {
@@ -32,4 +45,4 @@ angular.module('hipsterNews', ['ui.router'])
     $scope.incrementUpvotes = function(post) {
       post.upvotes++;
     };
-  }]);z
+  }]);
