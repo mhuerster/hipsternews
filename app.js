@@ -1,4 +1,4 @@
-angular.module('hipsterNews', [])
+angular.module('hipsterNews', ['ui.router'])
 .factory('posts', [function(){
   // change this variable name to something more semantic
   var o = {
