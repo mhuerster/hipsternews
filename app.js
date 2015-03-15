@@ -8,6 +8,11 @@ angular.module('hipsterNews', ['ui.router'])
         url: '/home',
         templateUrl: '/home.html',
         controller: 'MainCtrl'
+      })
+      .state('posts', {
+        url: '/posts/{id}',
+        templateUrl: '/posts.html',
+        controller: 'PostsCtrl'
       });
     $urlRouterProvider.otherwise('home');
   }
@@ -45,4 +50,11 @@ angular.module('hipsterNews', ['ui.router'])
     $scope.incrementUpvotes = function(post) {
       post.upvotes++;
     };
+  }])
+.controller('PostsCtrl', [
+  '$scope',
+  '$stateParams',
+  '$posts',
+  function($scope, $stateParams, $posts){
+    
   }]);
