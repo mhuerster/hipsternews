@@ -1,4 +1,4 @@
-angular.module('hipsterNews', ['ui.router'])
+angular.module('hipsterNews', ['ui.router', 'templates'])
 .config([
   '$stateProvider',
   '$urlRouterProvider',
