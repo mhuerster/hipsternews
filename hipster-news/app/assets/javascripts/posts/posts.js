@@ -1,5 +1,7 @@
 angular.module('hipsterNews')
-.factory('posts', [function(){
+.factory('posts', [
+  '$http',
+  function($http){
   // change this variable name to something more semantic
   var o = {
     posts: [
@@ -45,5 +47,10 @@ angular.module('hipsterNews')
         }
     ]
   };
+  o.getAll = function() {
+    return $http.get('/posts.json').success(function(data){
+      angular.copy(data, o.posts);
+    })
+  }
   return o;
 }])
