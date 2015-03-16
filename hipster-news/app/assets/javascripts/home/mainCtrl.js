@@ -16,6 +16,6 @@ angular.module('hipsterNews')
       $scope.link = '';
     };
     $scope.incrementUpvotes = function(post) {
-      post.upvotes++;
+      posts.upvote(post);
     };
   }])
