@@ -39,7 +39,9 @@ angular.module('hipsterNews', ['ui.router', 'templates', 'Devise'])
           templateUrl: 'auth/_register.html',
           controller: 'AuthCtrl',
           onEnter: ['$state', 'Auth', function($state, Auth) {
-            $state.go('home');
+            Auth.currentUser().then(function() {
+              $state.go('home');
+            })
           }]
         })
       $urlRouterProvider.otherwise('home');
