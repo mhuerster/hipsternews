@@ -18,6 +18,6 @@ private
   end
 
   def comment_params
-    params.require(:comment).permit(:body)
+    params.require(:comment).permit(:body, :upvotes)
   end
 end
