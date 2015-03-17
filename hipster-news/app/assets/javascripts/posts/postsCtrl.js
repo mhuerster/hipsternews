@@ -10,9 +10,13 @@ angular.module('hipsterNews')
         if ($scope.body == '') {
           return;
         }
-        $scope.post.comments.push({
+        posts.addComment(post.id, {
           body: $scope.body,
           author: 'user',
+        }).success(function(comment) {
+          $scope.post.comments.push(comment);
+        })
+        $scope.post.comments.push({
           upvotes: 0
         });
         $scope.body = '';
