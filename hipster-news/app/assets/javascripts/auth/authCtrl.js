@@ -1,5 +1,5 @@
 angular.module('hipsterNews')
-  .controller('authCtrl', [
+  .controller('AuthCtrl', [
     '$scope',
     '$state',
     'Auth',
