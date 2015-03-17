@@ -12,7 +12,7 @@ angular.module('hipsterNews')
         });
       };
       o.get = function(id) {
-        return $http.get('/posts' + id).then(function(response){
+        return $http.get('/posts/' + id).then(function(response) {
           return response.data;
         });
       };
@@ -26,6 +26,9 @@ angular.module('hipsterNews')
           .success(function(data) {
             post.upvotes += 1;
           });
+      };
+      o.addComment = function(id, comment) {
+        return $http.post('/posts/' + id + '/comments.json', comment);
       };
       return o;
     }
