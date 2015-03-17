@@ -11,6 +11,11 @@ angular.module('hipsterNews')
           angular.copy(data, o.posts);
         });
       };
+      o.get = function(id) {
+        return $http.get('/posts' + id).then(function(response){
+          return response.data;
+        });
+      };
       o.create = function(post) {
         return $http.post('/posts.json', post).success(function(data) {
           o.posts.push(data);
