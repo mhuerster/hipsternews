@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   before_filter :load_post
+  before_filter :authenticate_user!, only: [:create, :upvote]
 
   def create
     comment = @post.comments.create(comment_params)
