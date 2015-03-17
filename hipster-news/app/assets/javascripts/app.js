@@ -21,9 +21,9 @@ angular.module('hipsterNews', ['ui.router', 'templates'])
           resolve: {
             post: ['$stateParams', 'posts', function($stateParams, posts) {
               return posts.get($stateParams.id);
-            }];
-          };
-        });
+            }]
+          }
+        })
       $urlRouterProvider.otherwise('home');
     }
   ]);
