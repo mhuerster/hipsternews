@@ -12,7 +12,7 @@ angular.module('hipsterNews')
         });
       };
       o.get = function(id) {
-        return $http.get('/posts/' + id).then(function(response) {
+        return $http.get('/posts/' + id+'.json').then(function(response) {
           return response.data;
         });
       };
