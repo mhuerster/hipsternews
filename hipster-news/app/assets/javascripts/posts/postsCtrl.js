@@ -13,11 +13,9 @@ angular.module('hipsterNews')
         posts.addComment(post.id, {
           body: $scope.body,
           author: 'user',
+          upvotes: 0
         }).success(function(comment) {
           $scope.post.comments.push(comment);
-        })
-        $scope.post.comments.push({
-          upvotes: 0
         });
         $scope.body = '';
       };
