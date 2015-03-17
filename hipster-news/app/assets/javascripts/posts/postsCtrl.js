@@ -4,7 +4,7 @@ angular.module('hipsterNews')
     '$stateParams',
     'posts',
     'post',
-    function($scope, $stateParams, posts) {
+    function($scope, $stateParams, posts, post) {
       $scope.post = post;
       $scope.addComment = function() {
         if ($scope.body == '') {
