@@ -10,17 +10,17 @@ class PostsController < ApplicationController
   end
 
   def show
-    respond_with(post)
+    respond_with @post
   end
 
   def upvote
-    post.increment!(:upvotes)
-    respond_with(post)
+    @post.increment!(:upvotes)
+    respond_with @post
   end
 
 private
   def load_post
-    post = Post.find(params[:id])
+    @post = Post.find(params[:id])
   end
   def post_params
     params.require(:post).permit(:link, :title)
