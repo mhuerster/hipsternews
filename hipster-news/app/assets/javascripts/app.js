@@ -1,4 +1,4 @@
-angular.module('hipsterNews', ['ui.router', 'templates'])
+angular.module('hipsterNews', ['ui.router', 'templates', 'Devise'])
   .config([
     '$stateProvider',
     '$urlRouterProvider',
