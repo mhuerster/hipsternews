@@ -11,7 +11,7 @@
  * file per style scope.
  *
  *= require bootstrap/dist/css/bootstrap
- *= require bootstrap/dist/fonts/glyphicons
+ *= require bootstrap/fonts/glyphicons
  *= require_tree .
  *= require_self
  */
