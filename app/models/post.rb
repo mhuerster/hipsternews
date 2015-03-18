@@ -4,7 +4,7 @@ class Post < ActiveRecord::Base
   mount_uploader :post_photo, PostPhotoUploader
 
   def as_json(options = {})
-    super(options.merge(:include => [:user, :comments => {:include => :user}]))
+    super(options.merge(:include => [:user, :post_photo, :comments => {:include => :user}]))
   end
   
 end
