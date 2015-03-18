@@ -33,6 +33,7 @@ GEM
       tilt
     angular_rails_csrf (1.0.3)
       rails (>= 3, < 5)
+    angularjs-file-upload-rails (1.1.6)
     arel (5.0.1.20140414130214)
     bcrypt (3.1.10)
     builder (3.2.2)
@@ -163,6 +164,7 @@ PLATFORMS
 DEPENDENCIES
   angular-rails-templates
   angular_rails_csrf
+  angularjs-file-upload-rails (~> 1.1.6)
   carrierwave
   devise (~> 3.4.0)
   fauxster
