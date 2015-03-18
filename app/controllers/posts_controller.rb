@@ -24,6 +24,6 @@ private
     @post = Post.find(params[:id])
   end
   def post_params
-    params.require(:post).permit(:link, :title, :upvotes)
+    params.require(:post).permit(:link, :title, :upvotes, :file)
   end
 end
